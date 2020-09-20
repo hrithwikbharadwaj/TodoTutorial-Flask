@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo APP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </head>
+
 <body>
-    <H2> Todo App </H2>
-    <form action="/add" method="post">
-        <div> 
+    <div class="ui container">
+    <h2 class="ui center aligned header">Todo Flask App </h2>
+    <form class="ui form" action="/add" method="post">
+        <div class="field"> 
+            <label>Whats your Task?</label>
             <input type="text" name="title" placeholder="Enter Todo">
-            <button type="submit"> Submit</button>
+            <br>
+            <br>
+            
+            <button class="ui button"type="submit"> Submit</button>
+            <br> 
          </div>
         </form>
+        <br> 
         {% for todo in todos%}
-        <p> {{todo.id}} | {{todo.title}} </p>
+        <div class="ui segment">
+
+       
+        <p class="ui big header"> {{todo.id}} | {{todo.title}} </p>
        
         {% if todo.complete==False %}
-        <span> Not Completed </span>
+        <span class="ui gray label"> Not Completed </span>
         {%else%}
-        <span> Completed</span>
+        <span class="ui green label"></spanclass> Completed</span>
         {% endif %}
-        <a href="/update/{{todo.id}}"> Update</a>
-        <a href="/delete/{{todo.id}}"> Delete</a>
-        {% endfor %}
+        <a href="/update/{{todo.id}}">  <button class="ui blue button">Update</button></a>
+        <a href="/delete/{{todo.id}}">  <button class="ui red button">Delete</button></a>
+    </div>
         
+        {% endfor %}
+</div>
 </body>
 </html>

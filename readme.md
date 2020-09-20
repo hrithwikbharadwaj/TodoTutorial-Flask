@@ -8,7 +8,7 @@ This is targeted for beginners who can learn a lot of concepts of flask by build
 
 ### Future Improvements
 - Adding TimeStamps
-- Adding UI
+- Making this an PWA
 
 ### Tech Used
 
