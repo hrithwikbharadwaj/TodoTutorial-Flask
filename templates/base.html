@@ -21,7 +21,8 @@
         {%else%}
         <span> Completed</span>
         {% endif %}
-        
+        <a href="/update/{{todo.id}}"> Update</a>
+        <a href="/delete/{{todo.id}}"> Delete</a>
         {% endfor %}
         
 </body>
