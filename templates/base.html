@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H2> Todo App </H2>
+    <form action="/add" method="post">
+        <div> 
+            <input type="text" name="title" placeholder="Enter Todo">
+            <button type="submit"> Submit</button>
+         </div>
+        </form>
+        {% for todo in todos%}
+        <p> {{todo.id}} | {{todo.title}} </p>
+       
+        {% if todo.complete==False %}
+        <span> Not Completed </span>
+        {%else%}
+        <span> Completed</span>
+        {% endif %}
+        
+        {% endfor %}
+        
+</body>
+</html>
