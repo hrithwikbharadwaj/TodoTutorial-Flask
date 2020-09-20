@@ -21,22 +21,19 @@
             <button class="ui button"type="submit"> Submit</button>
             <br> 
          </div>
-        </form>
+    </form>
         <br> 
         {% for todo in todos%}
-        <div class="ui segment">
-
-       
-        <p class="ui big header"> {{todo.id}} | {{todo.title}} </p>
-       
-        {% if todo.complete==False %}
-        <span class="ui gray label"> Not Completed </span>
-        {%else%}
-        <span class="ui green label"></spanclass> Completed</span>
-        {% endif %}
-        <a href="/update/{{todo.id}}">  <button class="ui blue button">Update</button></a>
-        <a href="/delete/{{todo.id}}">  <button class="ui red button">Delete</button></a>
-    </div>
+            <div class="ui segment">
+                <p class="ui big header"> {{todo.id}} | {{todo.title}} </p>
+                {% if todo.complete==False %}
+                    <span class="ui gray label"> Not Completed </span>
+                {%else%}
+                    <span class="ui green label"> Completed</span>
+                {% endif %}
+                <a href="/update/{{todo.id}}">  <button class="ui blue button">Update</button></a>
+                <a href="/delete/{{todo.id}}">  <button class="ui red button">Delete</button></a>
+            </div>
         
         {% endfor %}
 </div>
